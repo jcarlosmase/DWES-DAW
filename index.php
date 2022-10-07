@@ -13,7 +13,7 @@
 	<li><a href="notas/index.php" > Tarea notas alumnos </a></li>
 	<li>Formularios</li>
 	<ul>
-		<li><a href="formularios/index.php" >Ejemplo 1: Elemntos de formulario</a></li>
+		<li><a href="formularios/index.php" >Ejemplo 1: Elementos de formulario</a></li>
 	</ul>
   </ul>
  </body>
