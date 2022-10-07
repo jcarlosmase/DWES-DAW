@@ -6,6 +6,7 @@
  <body>
   <h1>Página principal de la asignatura DWES-2DAW</h1>
   <ul>
+	<li>Ejemplos hasta el 07/10/2022</li>
 	<li><a href="array1/index.php" > Ejercicio 1 de arrays </a></li>
 	<li><a href="array1/array2.php" > Ejercicio 2 de arrays </a></li>
 	<li><a href="array1/array3.php" > Ejercicio 3 de arrays </a></li>
@@ -15,6 +16,8 @@
 	<ul>
 		<li><a href="formularios/index.php" >Ejemplo 1: Elementos de formulario</a></li>
 	</ul>
+	<li><a href="excepciones1.php" > Control de excepciones </a></li>
+	<li><a href="nave.php" > Funciones como argumentos </a></li>
   </ul>
  </body>
 </html>
