@@ -19,6 +19,8 @@
 	<li><a href="excepciones1.php" > Control de excepciones </a></li>
 	<li><a href="nave.php" > Funciones como argumentos </a></li>
 	<li><a href="ficheros/index.php" > Upload de archivos </a></li>
+	<li><a href="xml/index.php" > XML </a></li>
+	<li><a href="xml/otro.php" > Otro ejemplo XML </a></li>
   </ul>
  </body>
 </html>
