@@ -107,9 +107,9 @@
 	<label>Duración:</label>
 	<input type="text" name="duracion" id="duracion" /><br />
 	<label>Tipo de Asignatura:</label>
-	<input type="radio" name="tipo" checked="checked" />Troncal
-	<input type="radio" name="tipo" />Obligatoria
-	<input type="radio" name="tipo" />Optativa<br />
+	<input type="radio" name="tipo" value="Troncal" checked="checked" />Troncal
+	<input type="radio" name="tipo" value="Obligatoria" />Obligatoria
+	<input type="radio" name="tipo" value="Optativa" />Optativa<br />
 	<h3>Profesores Titulares:</h3>
 	<label class="etiqueta">DNI:</label>
 	<label class="etiqueta">Nombre:</label>
