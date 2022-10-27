@@ -23,6 +23,7 @@
 	<li><a href="xml/otro.php" > Otro ejemplo XML </a></li>
 	<li><a href="xml/asignaturas.php" > XML de asignaturas</a></li>
 	<li><a href="xml/creandoXML.php" > Creando un XML</a></li>
+	<li><a href="receta/index.php" > Receta OO </a></li>
   </ul>
  </body>
 </html>
