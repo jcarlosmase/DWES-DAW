@@ -112,6 +112,14 @@
 <?php
 	if(isset($_GET["cant"])){
 		echo "<h1>Receta para " . $_GET["comensales"] . " comensales</h1>";
+		include_once "receta.php";
+		$r = new receta($_GET["preparacion"]);
+		foreach($_GET["cantidad"] as $k => $v){
+			$i = new ingrediente($v,$_GET["unidad"][$k],$_GET["nombre"][$k]);
+			$r->addingrediente($i);
+		}
+		$r->creaReceta($_GET["comensales"]);
+		echo $r;
 	}
 ?>
  </body>
