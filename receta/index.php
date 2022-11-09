@@ -84,7 +84,7 @@
  
  <body>
   <h1>Crear Receta</h1>
-  <form action="" method="get" id="formulario">
+  <form action="procesaPDF.php" method="get" id="formulario">
 	<label>Ingrediente: (Cantidad, unidad, nombre)</label><br />
 	<input type="text" name="cant" id="cant" />
 	<select name="unid" id="unid">
@@ -104,9 +104,10 @@
 	<br /><label>Preparación</label><br />
 	<textarea name="preparacion" id="preparacion">
 	</textarea><br /><br />
-	<label>Ver la receta para: </label>
+	<label>Generar la receta para: </label>
 	<input type="text" name="comensales" id="comensales" />
-	<label>comensales</label><br />
+	<label>comensales y enviarla a:</label>
+	<input type="text" name="destinatario" id="destinatario" /><br />
 	<input type="button" value="Ver receta" onClick="javascript:envia();"/>
   </form>
 <?php
