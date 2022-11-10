@@ -24,6 +24,7 @@
 	<li><a href="xml/asignaturas.php" > XML de asignaturas</a></li>
 	<li><a href="xml/creandoXML.php" > Creando un XML</a></li>
 	<li><a href="receta/index.php" > Receta OO </a></li>
+	<li><a href="coockies/index.php" > Ejemplo cookies </a></li>
   </ul>
  </body>
 </html>
