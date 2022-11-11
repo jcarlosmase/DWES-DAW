@@ -26,6 +26,7 @@
 	<li><a href="receta/index.php" > Receta OO </a></li>
 	<li><a href="coockies/index.php" > Ejemplo cookies </a></li>
 	<li><a href="coockies/ejercicio.php" > Ejemplo cookies 2: Accesibilidad </a></li>
+	<li><a href="sesiones/index.php" > Ejemplo sesiones </a></li>
   </ul>
  </body>
 </html>
