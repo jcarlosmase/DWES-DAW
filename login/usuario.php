@@ -59,7 +59,7 @@ class usuario {
 	}
 	
 	public function estaIniciada(){
-		return $_SESSION["iniciada"];
+		return isset($_SESSION["iniciada"])?$_SESSION["iniciada"]:false;
 	}
 	
 	public function getUsuario(){

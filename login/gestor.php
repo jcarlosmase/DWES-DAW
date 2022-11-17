@@ -3,7 +3,7 @@ include_once "usuario.php";
 $u = new usuario();
 if($u->estaIniciada()){
 	//Hay un usuario iniciado
-	if($u->getTipoUs() == "administrador"){
+	if($u->getTipoUs() == "gestor"){
 		echo "<p>Hola " . $u->getNombreUsuario() . " este es tu espacio privado</p>";
 		echo "<a href=\"cerrar.php\">Cerrar sesión</a>";
 	}else{
