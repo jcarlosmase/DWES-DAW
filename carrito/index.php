@@ -1,3 +1,8 @@
+<?php
+include_once "carrito.php";
+$c=new carrito();
+if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,9 +57,8 @@
                     <ul class="menu-area-main">
                       <li class="active"> <a href="#">Inicio</a> </li>
                       <li> <a href="#vegetable">Comprar</a> </li>
-                      <li> <a href="#testimonial">Nuestros clientes</a> </li>
                       <li> <a href="verCarrito.php">Carrito</a> </li>
-                      <span>01</span>
+                      <span><?php echo $c->numProductos(); ?></span>
                      <li> <a href="#"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
@@ -108,7 +112,7 @@
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
           <h3>Peras</h3>
-          <p>Desliciosas peras conferencia a 0.99 €/kg </p>
+          <p>Desliciosas peras conferencia a 2.03 €/kg </p>
 		  <p>
            <form action="" method="get">
 		    <input type="hidden" name="producto" value="FR002" />
@@ -133,7 +137,7 @@
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
           <h3>Plátanos</h3>
-          <p>Desliciosas plátanos de canarias a 2.99 €/kg </p>
+          <p>Desliciosas plátanos de canarias a 1.57 €/kg </p>
 		  <p>
            <form action="" method="get">
 		    <input type="hidden" name="producto" value="FR003" />
@@ -159,7 +163,7 @@
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
           <h3>Sandia</h3>
-          <p>Sandía sin pepitas a 1.26 €/kg </p>
+          <p>Sandía sin pepitas a 2.59 €/kg </p>
 		  <p>
            <form action="" method="get">
 		    <input type="hidden" name="producto" value="FR002" />
@@ -185,122 +189,6 @@
   </div>
 </div>
 <!-- end vegetable -->
-
-
-
-
-   <!-- clients -->
-    <div id="testimonial" class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="titlepage">
-                        <h2>Nuestros clientes</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="clients_red">
-        <div class="container">
-            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#testimonial_slider" data-slide-to="0" class=""></li>
-                    <li data-target="#testimonial_slider" data-slide-to="1" class="active"></li>
-                    <li data-target="#testimonial_slider" data-slide-to="2" class=""></li>
-                </ul>
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                        <div class="testomonial_section">
-
-                            <div class="full testimonial_cont">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
-                                        <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
-                                            <i><img src="images/test_con.png" alt="#"/></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
-                                        <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-                                          
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item active">
-
-                        <div class="testomonial_section">
-                            <div class="full center">
-                            </div>
-                            <div class="full testimonial_cont ">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
-                                        <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
-                                            <i><img src="images/test_con.png" alt="#"/></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
-                                        <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-                                              
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="carousel-item">
-
-                        <div id="testomonial" class="testomonial_section">
-                            <div class="full center">
-                            </div>
-                            <div class="full testimonial_cont ">
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
-                                        <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
-                                            <i><img src="images/test_con.png" alt="#"/></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
-                                        <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-                                              
-                                            </p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-  
-    <!-- end clients -->
-
-
 </div>
 </div>
     <!-- end contact -->

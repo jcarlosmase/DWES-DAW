@@ -1,3 +1,11 @@
+<?php
+include_once "carrito.php";
+$c=new carrito();
+if(isset($_GET["borrar"]))
+	$c->borrarProducto($_GET["borrar"]);
+elseif(isset($_GET["producto"]))
+	$c->modificarPeso($_GET["producto"],$_GET["kg"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +60,7 @@
                     <ul class="menu-area-main">
                       <li> <a href="index.php">Inicio</a> </li>
                       <li class="active"> <a href="#">Carrito</a> </li>
-                      <span>01</span>
+                      <span><?php echo $c->numProductos(); ?></span>
                      <li> <a href="#"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
@@ -78,67 +86,20 @@
         </div>
       </div>
     </div>
+	<form action="" method="get">
     <div class="row">
-      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
-        <div class="vegetable_shop">
-          <h3>Manzanas</h3>
-		  <p>Precio por Kg: 1.25€</p>
-		  <p>
-           <form action="" method="get">
-		    <input type="hidden" name="producto" value="FR001" />
-			<div class="col-md-12">
-			  <input class="contactus" placeholder="Kg" type="text" name="kg" value="1.5">
-			</div>
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-			  <button class="send" type="submit" >Modificar peso</button>
-			  <button class="send" type="submit" >Borrar producto</button>
-			</div>
-           </form>
-		  </p>
-        </div>
-      </div>
-      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
-        <div class="vegetable_img">
-         <figure><img src="images/manzana.jpg" alt="#"/></figure>
-         <span>01</span>
-        </div>
-      </div>
-	  
-      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
-        <div class="vegetable_shop">
-          <h3>Peras</h3>
-		  <p>Precio por Kg: 0.99€</p>
-		  <p>
-           <form action="" method="get">
-		    <input type="hidden" name="producto" value="FR002" />
-			<div class="col-md-12">
-			  <input class="contactus" placeholder="Kg" type="text" name="kg" value="1.5">
-			</div>
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-			  <button class="send" type="submit" >Modificar peso</button>
-			  <button class="send" type="submit" >Borrar producto</button>
-			</div>
-           </form>
-		  </p>
-        </div>
-      </div>
-      <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
-        <div class="vegetable_img">
-         <figure><img src="images/pera.jpg" alt="#"/></figure>
-         <span>02</span>
-        </div>
-      </div>
-
+	  <?php echo $c;?>
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
           <h3>TOTAL CARRITO</h3>
-		  <p>2 Productos</p>
-		  <p>3 Kg de fruta</p>
-		  <p><b>3.36 € EN TOTAL</b></p>
+		  <p><?php echo $c->numProductos(); ?> Productos</p>
+		  <p><?php echo $c->getKg(); ?> Kg de fruta</p>
+		  <p><b><?php echo $c->getEuros(); ?> € EN TOTAL</b></p>
         </div>
       </div>
 	  
     </div>
+	</form>
   </div>
 </div>
 <!-- end vegetable -->
