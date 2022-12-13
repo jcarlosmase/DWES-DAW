@@ -76,6 +76,11 @@ elseif(isset($_GET["producto"]))
      <!-- end header -->
 </div>
 </header>
+<?php
+	include_once "usuario.php";
+	$u=new usuario();
+	if($u->estaIniciada()){// Muestro el formulario de login
+?>
 <!-- vegetable -->
 <div id="vegetable" class="vegetable">
   <div class="container">
@@ -103,7 +108,9 @@ elseif(isset($_GET["producto"]))
   </div>
 </div>
 <!-- end vegetable -->
-
+<?php
+	}else header("Location: index.php");
+?>
 
 </div>
 

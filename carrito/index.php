@@ -1,7 +1,18 @@
 <?php
+//GESTIÓN DEL CARRITO
 include_once "carrito.php";
 $c=new carrito();
 if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
+
+//GESTION DE LAS SESIONES
+include_once "usuario.php";
+$u=new usuario();
+//Cierre de sesión
+if(isset($_GET["cerrar"])) $u->logOut();
+//Inicio de sesión
+$mensaje="";
+if(isset($_POST["us"]) && isset($_POST["co"]))//Iniciando sesión
+	if(!$u->logIn($_POST["us"],$_POST["co"])) $mensaje="Usuario Incorrecto";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,9 +68,10 @@ if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
                     <ul class="menu-area-main">
                       <li class="active"> <a href="#">Inicio</a> </li>
                       <li> <a href="#vegetable">Comprar</a> </li>
+					  <?= $u->estaIniciada()?("<li><a href=\"?cerrar=true\">" . $u->getNombreUsuario(). " (Cerrar Sesión)</a></li>"):"";?>
                       <li> <a href="verCarrito.php">Carrito</a> </li>
                       <span><?php echo $c->numProductos(); ?></span>
-                     <li> <a href="#"><img src="icon/icon_b.png" alt="#" /></a></li>
+					  <li> <a href="#"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
                  </div>
@@ -84,6 +96,26 @@ if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
         </div>
       </div>
     </div>
+	
+<?php
+	if(!$u->estaIniciada()){// Muestro el formulario de login
+?>
+    <div class="row">
+	  <form action="" method="POST" style="background-color:skyblue; width:300px; padding:10px;">
+	   <h1>Formulario de login</h1>
+	   <label>Usuario</label>
+	   <input type="text" name="us" style="margin-left:25px;" /><br />
+	   <label>Contraseña</label>
+	   <input type="password" name="co" style="margin-left:4px;" /><br />
+	   <p>¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
+	   <input type="submit" value="Iniciar sesión" style="float:right;" />
+	   <span style="color:red;" id="error"><?= $mensaje; ?></span>
+	  </form>
+	</div>
+<?php
+	}else{
+?>
+	<!-- Bloque de productos en venta -->
     <div class="row">
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
@@ -186,6 +218,10 @@ if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
       </div>
 	  
     </div>
+	<!-- FIN Bloque de productos en venta -->
+<?php
+	}
+?>
   </div>
 </div>
 <!-- end vegetable -->
