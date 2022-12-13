@@ -8,7 +8,10 @@ if(isset($_GET["producto"])) $c->addProducto($_GET["producto"],$_GET["kg"]);
 include_once "usuario.php";
 $u=new usuario();
 //Cierre de sesión
-if(isset($_GET["cerrar"])) $u->logOut();
+if(isset($_GET["cerrar"])){
+	$u->logOut();
+	$c->vaciarCarrito();
+}
 //Inicio de sesión
 $mensaje="";
 if(isset($_POST["us"]) && isset($_POST["co"]))//Iniciando sesión
