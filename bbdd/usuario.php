@@ -10,18 +10,15 @@ class usuario{
 	
 	public function inserta($nombre,$rol){
 		
-		$resul=$this->c->consulta("INSERT INTO usuarios(nombre,rol) VALUES('$nombre','$rol')");
-		if(!$resul)
-			return "ERROR: No se ha insertado";
-		return "Todo correcto";
+		return $this->c->consulta("INSERT INTO usuarios(nombre,rol) VALUES('$nombre','$rol')");
 	}
 	
 	public function verUsuario($id){
-		return $datos;
+		return $this->c->consulta("SELECT * FROM usuarios WHERE clave=$id")->fetch();
 	}
 	
 	public function verUsuarios(){
-		
+		return $this->c->consulta("SELECT * FROM usuarios");
 	}
 	
 	public function modificaUsuario($id,$datos){
@@ -29,7 +26,7 @@ class usuario{
 	}
 	
 	public function borrarUsuario($id){
-		
+		return $this->c->consulta("DELETE FROM usuarios WHERE clave=$id");
 	}
 	
 	public function __destruct(){

@@ -1,6 +1,6 @@
 <?php
 class carrito{
-	private $productos; = array("FR001" => array("Manzana golden","1.25","manzana.jpg"),
+	private $productos = array("FR001" => array("Manzana golden","1.25","manzana.jpg"),
 							   "FR002" => array("Pera conferencia","2.03","pera.jpg"),
 							   "FR003" => array("Plátano de canarias","1.57","platano.jpg"),
 							   "FR004" => array("Sandía sin pepitas","2.59","sandia.jpg"));

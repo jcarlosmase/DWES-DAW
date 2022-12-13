@@ -4,7 +4,7 @@ class conexion extends PDO{
 	private $servidor='localhost';
     private $usuario='root';
     private $contrasena='';
-    private $baseDatos='ejercicios';
+    private $baseDatos='dwes';
 
     public function __construct() {
 		try{

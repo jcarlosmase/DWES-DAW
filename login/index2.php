@@ -9,14 +9,14 @@
 	$u=new usuario();
 	if(!$u->estaIniciada()){// Muestro el formulario de login
 ?>
-	  <form action="" method="POST">
+	  <form action="" method="POST" style="background-color:skyblue; width:300px; padding:10px;">
 	   <h1>Formulario de login</h1>
 	   <label>Usuario</label>
-	   <input type="text" name="us" /><br />
+	   <input type="text" name="us" style="margin-left:25px;" /><br />
 	   <label>Contraseña</label>
-	   <input type="password" name="co" /><br />
+	   <input type="password" name="co" style="margin-left:4px;" /><br />
 	   <p>¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>
-	   <input type="submit" value="Iniciar sesión" />
+	   <input type="submit" value="Iniciar sesión" style="float:right;" />
 	   <span style="color:red;" id="error"></span>
 	  </form>
 <?php
