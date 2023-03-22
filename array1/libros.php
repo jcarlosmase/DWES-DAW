@@ -17,11 +17,11 @@
 								 "Titulo" => "El baile de la Victoria",
 								 "Autor" => "Skármeta, Antonio",
 								 "Precio" => 15),
-					"1" => array("Cantidad" => 12,
+					"3" => array("Cantidad" => 12,
 								 "Titulo" => "Rayuela",
 								 "Autor" => "Cortázar, Julio",
 								 "Precio" => 11.50),
-					"1" => array("Cantidad" => 3,
+					"4" => array("Cantidad" => 3,
 								 "Titulo" => "Antes del fin",
 								 "Autor" => "Sábato, Ernesto",
 								 "Precio" => 13));
